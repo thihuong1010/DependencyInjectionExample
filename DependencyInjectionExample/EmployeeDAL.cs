@@ -2,10 +2,16 @@
 namespace DependencyInjectionExample
 {
     //Service Class or Dependency Object
+    //Dependency Object should be Interface-Based
+    public interface IEmployeeDAL
+    {
+        List<Employee> SelectAllEmployees();
+    }
+
     //This is the class that is responsible for Interacting with the Database
     //This class is going to be used by the EmployeeBL class
     //That means it is going to be the Dependency Object
-    public class EmployeeDAL
+    public class EmployeeDAL : IEmployeeDAL
     {
         public List<Employee> SelectAllEmployees()
         {
